@@ -14,8 +14,8 @@
   ],
   "devDependencies": {
     "react": "~0.12.2",
-    "react-mini-router": "~0.1.3",
-    "JSONP": "OscarGodson/JSONP",
-    "normalize.css": "~3.0.2"
+    "normalize.css": "~3.0.2",
+    "jquery": "~2.1.3",
+    "react-mini-router": "~0.1.3"
   }
 }

@@ -2,3 +2,28 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
 }
+
+
+
+
+
+/*--- clearfix ---*/
+
+.clearfix,
+.listfix li {
+    min-height: 0;
+}
+
+.clearfix:after,
+.listfix li:after {
+    content: ".";
+    height: 0;
+    display: block;
+    clear: both;
+    visibility: hidden;
+}
+
+* html .clearfix,
+* html .listfix li {
+    height: 1%;
+}

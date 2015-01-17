@@ -62,13 +62,12 @@ App.PhotoListItem = React.createClass({
         var photo = this.props.photo;
 
         var thumb_style = {
-            'background-image': 'url(' + photo.media.m + ');',
-            'background-size': 'cover'
+            'background-image': 'url(' + photo.media.m + ');'
         };
 
         return (
             <li>
-                <div className="inner">
+                <div className="inner clearfix">
                     <div className="thumb" style={thumb_style}>
 
                     </div>

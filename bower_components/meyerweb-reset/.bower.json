@@ -1,0 +1,34 @@
+{
+  "name": "meyerweb-reset",
+  "version": "2.0.20110126",
+  "authors": [
+    "James Fry <james.fry@jrfsolutions.co.uk>",
+    "Hywel Bennett <hyweldt@gmail.com>"
+  ],
+  "description": "Eric Meyer's CSS Tools: Reset CSS",
+  "main": [
+    "reset.css",
+    "_reset.scss"
+  ],
+  "keywords": [
+    "Meyer",
+    "css",
+    "reset",
+    "scss"
+  ],
+  "license": "Public Domain",
+  "ignore": [
+    "**/.*"
+  ],
+  "homepage": "https://github.com/competent/meyerweb-reset",
+  "_release": "2.0.20110126",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.20110126",
+    "commit": "8b152148bc39b6f5ce2f031ac5bc522d66f1d92f"
+  },
+  "_source": "git://github.com/competent/meyerweb-reset.git",
+  "_target": "~2.0.20110126",
+  "_originalSource": "git://github.com/competent/meyerweb-reset.git",
+  "_direct": true
+}

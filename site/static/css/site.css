@@ -1,0 +1,1 @@
+body{font-family:Arial,Helvetica,sans-serif;padding:20px}#feed-title{font-size:2em;height:65px;margin-top:10px}#photo-list{border:1px solid #aaa;overflow:auto}#photo-list li{border-top:1px solid #aaa;height:90px;overflow:hidden}#photo-list li:first-child{border-top:none}#photo-list .thumb{height:85px;overflow:hidden;width:120px}

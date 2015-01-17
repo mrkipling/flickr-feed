@@ -1,5 +1,10 @@
 var App = App || {};
 
+/**
+ * The main UI for the entire app.
+ * This is where the state lives.
+ */
+
 App.UI = React.createClass({
 
     mixins: [ReactMiniRouter.RouterMixin],
@@ -61,7 +66,7 @@ App.UI = React.createClass({
 
     feed: function() {
         return (
-            <App.Feed />
+            <App.Feed photos={this.state.photos} />
         );
     },
 

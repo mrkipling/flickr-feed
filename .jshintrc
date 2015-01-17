@@ -78,6 +78,7 @@
     "globals"       : {
         "React": true,
         "ReactMiniRouter": true,
+        "jQuery": true,
         "App": true
     }
 }

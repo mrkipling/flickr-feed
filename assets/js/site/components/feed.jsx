@@ -1,3 +1,5 @@
+var App = App || {};
+
 App.Feed = React.createClass({
 
     render: function() {

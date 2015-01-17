@@ -19,8 +19,7 @@ var paths = {
         lib: ['./assets/js/lib/react-with-addons.js',
               './assets/js/lib/react-mini-router.js',
               './assets/js/lib/JSONP.js'],
-        site: ['./assets/js/site/init.jsx',
-               './assets/js/site/components/**.jsx',
+        site: ['./assets/js/site/components/**.jsx',
                './assets/js/site/render.jsx']
     }
 };

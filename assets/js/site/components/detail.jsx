@@ -1,3 +1,5 @@
+var App = App || {};
+
 App.Detail = React.createClass({
 
     render: function() {

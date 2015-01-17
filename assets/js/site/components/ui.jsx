@@ -1,3 +1,5 @@
+var App = App || {};
+
 App.UI = React.createClass({
 
     mixins: [ReactMiniRouter.RouterMixin],

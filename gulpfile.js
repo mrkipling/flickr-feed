@@ -13,8 +13,7 @@ var gulp = require('gulp'),
 var paths = {
     styles: {
         lib: ['./assets/css/lib/**'],
-        site: ['./assets/css/site/base.less',
-              './assets/css/site/components/**']
+        site: ['./assets/css/site/base.less']
     },
     scripts: {
         lib: ['./assets/js/lib/jquery.js',

@@ -1,0 +1,38 @@
+{
+  "name": "react-mini-router",
+  "version": "0.1.6",
+  "description": "A small url router for React apps.",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify -e index.js -s ReactMiniRouter > dist/react-mini-router.js",
+    "dist": "uglifyjs dist/react-mini-router.js > dist/react-mini-router.min.js",
+    "test": "karma start --single-run"
+  },
+  "author": "Larry Myers <larry@larrymyers.com>",
+  "homepage": "https://github.com/larrymyers/react-mini-router",
+  "keywords": [
+    "react",
+    "router"
+  ],
+  "bugs": {
+    "url": "https://github.com/larrymyers/react-mini-router/issues"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=0.10.0"
+  },
+  "dependencies": {
+    "path-to-regexp": "^0.2.3",
+    "urllite": "^0.4.4"
+  },
+  "devDependencies": {
+    "browserify": "^5.9.1",
+    "karma": "^0.12.21",
+    "karma-browserifast": "^0.7.0",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-mocha": "^0.1.6",
+    "mocha": "^1.21.4",
+    "react": "^0.11.1",
+    "uglify-js": "^2.4.15"
+  }
+}

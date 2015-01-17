@@ -1,0 +1,36 @@
+{
+  "name": "react-mini-router",
+  "main": "dist/react-mini-router.js",
+  "version": "0.1.6",
+  "homepage": "https://github.com/larrymyers/react-mini-router",
+  "authors": [
+    "Larry Myers <larry@larrymyers.com>"
+  ],
+  "description": "A minimal router for React.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "react",
+    "router"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "example",
+    "lib",
+    "node_modules",
+    "test",
+    "index.js"
+  ],
+  "_release": "0.1.6",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.6",
+    "commit": "1ef84d96d57801a0069bd035125543e47e0bc2af"
+  },
+  "_source": "git://github.com/larrymyers/react-mini-router.git",
+  "_target": "~0.1.3",
+  "_originalSource": "react-mini-router"
+}

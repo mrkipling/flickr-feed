@@ -1,0 +1,1 @@
+../../../bower_components/react-mini-router/dist/react-mini-router.js

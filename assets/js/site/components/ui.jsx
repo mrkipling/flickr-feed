@@ -85,8 +85,24 @@ App.UI = React.createClass({
      */
 
     detail: function(id) {
+        if (this.state.photos.length === 0) {
+            return (
+                <p>Loading...</p>
+            );
+        }
+
+        var photo = $.grep(this.state.photos, function(item) {
+            return item.id === id;
+        });
+
+        if (photo.length === 0) {
+            photo = null;
+        } else {
+            photo = photo[0];
+        }
+
         return (
-            <App.Detail id={id} />
+            <App.Detail photo={photo} />
         );
     }
 

@@ -6,23 +6,14 @@ var App = App || {};
 
 App.PhotoList = React.createClass({
 
-    /**
-     * Resizes the feed node (which is scrollable) so that it fits on the screen
-     * perfectly.
-     */
-
-    resizeNode: function() {
-        $(this.getDOMNode()).height($(window).innerHeight() - 125);
+    componentDidMount: function() {
+        // resize the feed node on initial page load and on window resize
+        App.Tools.resizeElement(this.getDOMNode());
     },
 
-    componentDidMount: function() {
-        // resize the feed node on initial page load
-        this.resizeNode();
-
-        // also resize it on window resize so that it's always the correct height
-        $(window).on('resize', function() {
-            this.resizeNode();
-        }.bind(this));
+    componentWillUnmount: function() {
+        // get rid of the window onresize binding
+        $(window).off('resize.node');
     },
 
     render: function() {
@@ -64,22 +55,9 @@ App.PhotoListItem = React.createClass({
             backgroundImage: 'url(' + photo.media.m + ');'
         };
 
-        // take the author name from the JSON and format it nicely, removing the
-        // nobody@flickr.com stuff and brackets (but only if they exist,
-        // otherwise just use what we have
-
-        var author_name = photo.author;
-        if (author_name.indexOf('nobody@flickr.com (') !== -1) {
-            author_name = author_name.replace('nobody@flickr.com (', '').slice(0, -1);
-        }
-
-        // slightly hacky perhaps, but in order to change the order of elements
-        // based on screen width we're going to display the 'published' details
-        // twice
-
-        var published = (
-            <span className="published">Published: {moment(photo.published).format('Do MMM [at] HH:mm')}</span>
-        );
+        // N.B. this is perhaps slightly hacky, but in order to change the order
+        // of elements based on screen width we're going to display the
+        // 'published' details twice
 
         return (
             <li>
@@ -87,9 +65,9 @@ App.PhotoListItem = React.createClass({
                 <div className="inner">
                     <h2 onClick={this.showDetail}>{photo.title || "Untitled"}</h2>
                     <div className="details">
-                        {published}
-                        <a className="author" href={'https://www.flickr.com/people/' + photo.author_id + '/'} target="_blank">{author_name}</a>
-                        {published}
+                        <App.Published published={photo.published} />
+                        <App.AuthorLink author_id={photo.author_id} author={photo.author} />
+                        <App.Published published={photo.published} />
                         <a className="view" href={photo.link} target="_blank">View on Flickr</a>
                     </div>
                 </div>

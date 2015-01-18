@@ -1,0 +1,49 @@
+/*--- photo detail ---*/
+
+#photo-detail {
+    border: 1px solid @border-color;
+    padding: 20px;
+
+    #photo-title {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+    }
+
+    .info {
+        margin-bottom: 30px;
+    }
+
+    .separator {
+        margin: 0 10px;
+    }
+
+    .details {
+        padding-left: 260px;
+        position: relative;
+    }
+
+    .thumb {
+        background-size: auto;
+        background-repeat: no-repeat;
+        height: 240px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 240px;
+    }
+
+    .description p:nth-child(-n+2) {
+        display: none;
+    }
+}
+
+
+
+
+
+/*--- photo not found ---*/
+
+.not-found .go-back {
+    .anchor-style();
+    margin-top: 10px;
+}

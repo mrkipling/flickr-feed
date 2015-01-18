@@ -56,7 +56,7 @@ App.PhotoList = React.createClass({
         });
 
         return (
-            <ul id="photo-list">
+            <ul id="photo-list" className="listfix">
                 {photo_list}
             </ul>
         );
@@ -85,8 +85,9 @@ App.PhotoListItem = React.createClass({
 
         return (
             <li>
+                <div className="thumb" style={thumb_style} />
                 <div className="inner clearfix">
-                    <div className="thumb" style={thumb_style} />
+                    <h2>{photo.title}</h2>
                 </div>
             </li>
         );

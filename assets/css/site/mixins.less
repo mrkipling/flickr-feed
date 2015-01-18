@@ -1,8 +1,9 @@
 // anchor styling - can be applied to any element to make it look like an
 // anchor, as you don't always need an actual anchor in JS-heavy apps
 
-.anchor-style(@color: @link-color) {
+.anchor-style(@color: @link-color, @text-decoration: none) {
     color: @color;
+    text-decoration: @text-decoration;
 
     &:hover {
         color: darken(@color, 5%);

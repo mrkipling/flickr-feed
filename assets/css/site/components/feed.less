@@ -12,14 +12,17 @@
 
 /*--- photo list ---*/
 
+@photo-li-height: 90px;
+
 #photo-list {
     border: 1px solid @border-color;
     overflow: auto;
 
     li {
         border-top: 1px solid @border-color;
-        height: 90px;
+        height: @photo-li-height;
         padding-left: 120px;
+        position: relative;
         overflow: hidden;
 
         &:first-child {
@@ -30,9 +33,21 @@
     .thumb {
         background-size: cover;
         border-right: 1px solid @border-color;
-        height: 90px;
+        float: left;
+        height: @photo-li-height;
         margin-left: -120px;
         overflow: hidden;
         width: 120px;
+    }
+
+    .inner {
+        float: left;
+        height: @photo-li-height - 20;
+        padding: 10px;
+    }
+
+    h2 {
+        .anchor-style();
+        font-size: 1.4em;
     }
 }

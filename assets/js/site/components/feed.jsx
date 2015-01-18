@@ -49,9 +49,9 @@ App.PhotoList = React.createClass({
     },
 
     render: function() {
-        var photo_list = this.props.photos.map(function(photo) {
+        var photo_list = this.props.photos.map(function(photo, i) {
             return (
-                <App.PhotoListItem photo={photo} />
+                <App.PhotoListItem key={'photo-li-' + i} photo={photo} />
             );
         });
 
@@ -80,7 +80,7 @@ App.PhotoListItem = React.createClass({
         // background-size: cover in order to make it fit nicely
 
         var thumb_style = {
-            'background-image': 'url(' + photo.media.m + ');'
+            backgroundImage: 'url(' + photo.media.m + ');'
         };
 
         // take the author name from the JSON and format it nicely, removing the

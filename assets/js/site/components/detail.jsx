@@ -1,5 +1,9 @@
 var App = App || {};
 
+/**
+ * Photo detail.
+ */
+
 App.Detail = React.createClass({
 
     componentDidMount: function() {
@@ -70,9 +74,35 @@ App.Detail = React.createClass({
                 <div className="details">
                     <div className="thumb" style={thumb_style} />
                     {description}
+                    <App.Tags tags={photo.tags} />
                 </div>
             </div>
         );
     }
 
+});
+
+
+
+
+
+/**
+ * Tags (with links).
+ */
+
+App.Tags = React.createClass({
+    render: function() {
+        var tags = this.props.tags.split(' ').map(function(tag) {
+            return (
+                <a href={'https://www.flickr.com/search/?tags=' + tag} target="_blank">{tag}</a>
+            );
+        });
+
+        return (
+            <div className="tags">
+                <span>Tags:</span>
+                {tags}
+            </div>
+        );
+    }
 });

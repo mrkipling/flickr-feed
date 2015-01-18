@@ -20,7 +20,7 @@ var paths = {
               './assets/js/lib/react-with-addons.js',
               './assets/js/lib/react-mini-router.js',
               './assets/js/lib/moment.js'],
-        site: ['./assets/js/site/init.jsx',
+        site: ['./assets/js/site/tools.jsx',
                './assets/js/site/components/**.jsx',
                './assets/js/site/render.jsx']
     }

@@ -38,7 +38,11 @@ App.UI = React.createClass({
                 var photos;
 
                 if (typeof data.items !== 'undefined') {
-                    photos = data.items;
+                    photos = data.items.map(function(item) {
+                        var urlbits = item.link.split('/');
+                        item.id = urlbits[urlbits.length - 2];
+                        return item;
+                    });
                 } else {
                     photos = [];
                 }

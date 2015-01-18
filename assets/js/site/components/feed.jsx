@@ -73,6 +73,10 @@ App.PhotoList = React.createClass({
  */
 
 App.PhotoListItem = React.createClass({
+    showDetail: function() {
+        App.Tools.navigate('photo/' + this.props.photo.id);
+    },
+
     render: function() {
         var photo = this.props.photo;
 
@@ -102,9 +106,9 @@ App.PhotoListItem = React.createClass({
 
         return (
             <li>
-                <div className="thumb" style={thumb_style} />
+                <div className="thumb" style={thumb_style} onClick={this.showDetail} />
                 <div className="inner">
-                    <h2>{photo.title || "Untitled"}</h2>
+                    <h2 onClick={this.showDetail}>{photo.title || "Untitled"}</h2>
                     <div className="details">
                         {published}
                         <a className="author" href={'https://www.flickr.com/people/' + photo.author_id + '/'} target="_blank">{author_name}</a>

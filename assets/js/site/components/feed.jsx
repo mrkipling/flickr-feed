@@ -29,8 +29,23 @@ App.Feed = React.createClass({
 
 App.PhotoList = React.createClass({
 
-    componentDidMount: function() {
+    /**
+     * Resizes the feed node (which is scrollable) so that it fits on the screen
+     * perfectly.
+     */
+
+    resizeNode: function() {
         $(this.getDOMNode()).height($(window).innerHeight() - 125);
+    },
+
+    componentDidMount: function() {
+        // resize the feed node on initial page load
+        this.resizeNode();
+
+        // also resize it on window resize so that it's always the correct height
+        $(window).on('resize', function() {
+            this.resizeNode();
+        }.bind(this));
     },
 
     render: function() {

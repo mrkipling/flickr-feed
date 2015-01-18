@@ -1,5 +1,3 @@
-var App = App || {};
-
 /**
  * PhotoList (the list of photos in the feed).
  */
@@ -17,7 +15,16 @@ App.PhotoList = React.createClass({
     },
 
     render: function() {
-        var photo_list = this.props.photos.map(function(photo, i) {
+        var search_term = this.props.search_term;
+        var photos = this.props.photos;
+
+        if (search_term) {
+            photos = $.grep(photos, function(photo) {
+                return photo.tags.indexOf(search_term) > -1;
+            });
+        }
+
+        var photo_list = photos.map(function(photo, i) {
             return (
                 <App.PhotoListItem key={'photo-li-' + i} photo={photo} />
             );

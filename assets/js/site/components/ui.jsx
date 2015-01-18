@@ -1,8 +1,5 @@
-var App = App || {};
-
 /**
  * The main UI for the entire app.
- * This is where the state lives.
  */
 
 App.UI = React.createClass({
@@ -20,7 +17,8 @@ App.UI = React.createClass({
 
     getInitialState: function() {
         return {
-            photos: []
+            photos: [],
+            searchTerm: ''
         };
     },
 
@@ -59,10 +57,24 @@ App.UI = React.createClass({
         this.loadPhotos();
     },
 
+    /**
+     * Updates the search term in the state.
+     * @param {string} term - The search term to update.
+     */
+
+    updateSearchTerm: function(term) {
+        this.setState({
+            searchTerm: term
+        });
+    },
+
     render: function() {
         return (
             <div>
-                <h1 id="feed-title">Flickr Public Feed</h1>
+                <header id="main-header">
+                    <h1>Flickr Public Feed</h1>
+                    <App.Search updateSearchTerm={this.updateSearchTerm} />
+                </header>
                 {this.renderCurrentRoute()}
             </div>
         );
@@ -75,7 +87,7 @@ App.UI = React.createClass({
 
     feed: function() {
         return (
-            <App.PhotoList photos={this.state.photos} />
+            <App.PhotoList photos={this.state.photos} search_term={this.state.searchTerm} />
         );
     },
 

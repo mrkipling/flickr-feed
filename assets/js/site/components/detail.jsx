@@ -1,5 +1,3 @@
-var App = App || {};
-
 /**
  * Photo detail.
  */

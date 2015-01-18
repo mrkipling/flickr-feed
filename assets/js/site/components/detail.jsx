@@ -72,7 +72,7 @@ App.Detail = React.createClass({
                 </div>
 
                 <div className="details">
-                    <div className="thumb" style={thumb_style} />
+                    <a className="thumb" href={photo.link} target="_blank" style={thumb_style} />
                     {description}
                     <App.Tags tags={photo.tags} />
                 </div>

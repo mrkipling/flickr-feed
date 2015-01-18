@@ -42,8 +42,12 @@
 
     .inner {
         float: left;
-        height: @photo-li-height - 20;
         padding: 10px;
+
+        // this vertically-aligns the element, despite it being variable height
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     h2 {

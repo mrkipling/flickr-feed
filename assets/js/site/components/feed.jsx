@@ -96,7 +96,7 @@ App.PhotoListItem = React.createClass({
             <li>
                 <div className="thumb" style={thumb_style} />
                 <div className="inner clearfix">
-                    <h2>{photo.title}</h2>
+                    <h2>{photo.title || "Untitled"}</h2>
                     <div className="details">
                         <a className="author" href={'https://www.flickr.com/people/' + photo.author_id + '/'} target="_blank">{author_name}</a>
                         <span className="published">Published: {moment(photo.published).format('Do MMM [at] HH:mm')}</span>

@@ -8,7 +8,7 @@ body {
 }
 
 a {
-    .anchor-style();
+    .anchor-style(@text-decoration: underline);
 }
 
 
@@ -17,21 +17,16 @@ a {
 
 /*--- clearfix ---*/
 
-.clearfix,
-.listfix li {
-    min-height: 0;
-}
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
 
-.clearfix:after,
-.listfix li:after {
-    content: ".";
-    height: 0;
-    display: block;
-    clear: both;
-    visibility: hidden;
-}
+.clearfix() {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
 
-* html .clearfix,
-* html .listfix li {
-    height: 1%;
+    &:after {
+        clear: both;
+    }
 }

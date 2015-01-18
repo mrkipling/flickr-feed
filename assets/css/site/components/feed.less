@@ -16,6 +16,7 @@
 
 #photo-list {
     border: 1px solid @border-color;
+    min-width: 350px;
     overflow: auto;
 
     li {
@@ -23,25 +24,31 @@
         height: @photo-li-height;
         padding-left: 120px;
         position: relative;
-        overflow: hidden;
 
         &:first-child {
             border-top: none;
+        }
+
+        @media only screen and (max-width: @breakpoint-tiny) {
+            padding-left: 90px;
+
+            .thumb {
+                width: 90px;
+            }
         }
     }
 
     .thumb {
         background-size: cover;
         border-right: 1px solid @border-color;
-        float: left;
         height: @photo-li-height;
-        margin-left: -120px;
-        overflow: hidden;
+        left: 0;
+        position: absolute;
+        top: 0;
         width: 120px;
     }
 
     .inner {
-        float: left;
         padding: 10px;
 
         // this vertically-aligns the element, despite it being variable height
@@ -53,5 +60,54 @@
     h2 {
         .anchor-style();
         font-size: 1.4em;
+        margin-bottom: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        @media only screen and (max-width: @breakpoint-small) {
+            margin-bottom: 5px;
+        }
+
+        @media only screen and (max-width: @breakpoint-tiny) {
+            font-size: 1.2em;
+        }
+    }
+
+    .details {
+        .author,
+        .published {
+            margin-right: 10px;
+        }
+
+        .published,
+        .view {
+            font-size: 0.85em;
+        }
+
+        .published:first-child {
+            display: none;
+        }
+
+        @media only screen and (max-width: @breakpoint-small) {
+            .published {
+                display: none;
+
+                &:first-child {
+                    display: block;
+                }
+            }
+
+            .author {
+                font-size: 0.85em;
+            }
+        }
+
+        @media only screen and (max-width: @breakpoint-tiny) {
+            .view {
+                display: block;
+                margin-top: 3px;
+            }
+        }
     }
 }

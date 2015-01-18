@@ -92,15 +92,24 @@ App.PhotoListItem = React.createClass({
             author_name = author_name.replace('nobody@flickr.com (', '').slice(0, -1);
         }
 
+        // slightly hacky perhaps, but in order to change the order of elements
+        // based on screen width we're going to display the 'published' details
+        // twice
+
+        var published = (
+            <span className="published">Published: {moment(photo.published).format('Do MMM [at] HH:mm')}</span>
+        );
+
         return (
             <li>
                 <div className="thumb" style={thumb_style} />
-                <div className="inner clearfix">
+                <div className="inner">
                     <h2>{photo.title || "Untitled"}</h2>
                     <div className="details">
+                        {published}
                         <a className="author" href={'https://www.flickr.com/people/' + photo.author_id + '/'} target="_blank">{author_name}</a>
-                        <span className="published">Published: {moment(photo.published).format('Do MMM [at] HH:mm')}</span>
-                        <a href={photo.link} target="_blank">View on Flickr</a>
+                        {published}
+                        <a className="view" href={photo.link} target="_blank">View on Flickr</a>
                     </div>
                 </div>
             </li>

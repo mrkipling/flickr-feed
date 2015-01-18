@@ -62,7 +62,7 @@ App.Detail = React.createClass({
 
         return (
             <div id="photo-detail">
-                <h2 id="photo-title">{photo.title}</h2>
+                <h2 id="photo-title"><a href={photo.link} target="_blank">{photo.title}</a></h2>
                 <div id="go-back" onClick={this.goBack}>Back</div>
 
                 <div className="info">

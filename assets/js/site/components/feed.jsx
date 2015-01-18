@@ -11,7 +11,6 @@ App.Feed = React.createClass({
 
         return (
             <div id="feed">
-                <h1 id="feed-title">Flickr Public Feed</h1>
                 <App.PhotoList photos={photos} />
             </div>
         );

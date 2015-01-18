@@ -60,7 +60,12 @@ App.UI = React.createClass({
     },
 
     render: function() {
-        return this.renderCurrentRoute();
+        return (
+            <div>
+                <h1 id="feed-title">Flickr Public Feed</h1>
+                {this.renderCurrentRoute()}
+            </div>
+        );
     },
 
     /**

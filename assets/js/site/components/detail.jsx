@@ -59,6 +59,7 @@ App.Detail = React.createClass({
         return (
             <div id="photo-detail">
                 <h2 id="photo-title">{photo.title}</h2>
+                <div id="go-back" onClick={this.goBack}>Back</div>
 
                 <div className="info">
                     <App.AuthorLink author_id={photo.author_id} author={photo.author} />

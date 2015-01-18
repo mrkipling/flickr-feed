@@ -4,6 +4,7 @@ App.Tools = {};
 /**
  * Navigate to a #! URL (the navigate function in react-mini-router seems to
  * want to force HTML5 history, which doesn't work on a local HTML file).
+ * @param {string} url - The URL to navigate to.
  */
 
 App.Tools.navigate = function(url) {
@@ -17,6 +18,9 @@ App.Tools.navigate = function(url) {
 /**
  * Resizes the supplied element (which is scrollable) so that it fits on the screen
  * perfectly.
+ * @param {object} node - The DOM element to resize.
+ * @param {boolean} [onresize=true] - If true, bind to window.resize and resize
+ *     then as well.
  */
 
 App.Tools.resizeElement = function(node, onresize) {

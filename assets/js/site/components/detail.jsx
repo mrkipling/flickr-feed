@@ -92,11 +92,13 @@ App.Detail = React.createClass({
 
 App.Tags = React.createClass({
     render: function() {
-        var tags = this.props.tags.split(' ').map(function(tag) {
+        var tags = this.props.tags ? this.props.tags.split(' ').map(function(tag) {
             return (
                 <a href={'https://www.flickr.com/search/?tags=' + tag} target="_blank">{tag}</a>
             );
-        });
+        }) : (
+            <span>No tags provided</span>
+        );
 
         return (
             <div className="tags">

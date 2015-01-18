@@ -1,9 +1,14 @@
 @import "vars";
-@import "components/feed.less";
+@import "mixins";
+@import "components/feed";
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
+}
+
+a {
+    .anchor-style();
 }
 
 

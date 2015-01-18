@@ -18,7 +18,8 @@ var paths = {
     scripts: {
         lib: ['./assets/js/lib/jquery.js',
               './assets/js/lib/react-with-addons.js',
-              './assets/js/lib/react-mini-router.js'],
+              './assets/js/lib/react-mini-router.js',
+              './assets/js/lib/moment.js'],
         site: ['./assets/js/site/init.jsx',
                './assets/js/site/components/**.jsx',
                './assets/js/site/render.jsx']

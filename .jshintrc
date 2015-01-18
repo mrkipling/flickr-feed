@@ -79,6 +79,7 @@
         "React": true,
         "ReactMiniRouter": true,
         "jQuery": true,
+        "moment": true,
         "App": true
     }
 }

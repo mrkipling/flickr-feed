@@ -1,28 +1,6 @@
 var App = App || {};
 
 /**
- * The main photo feed (index page).
- */
-
-App.Feed = React.createClass({
-
-    render: function() {
-        var photos = this.props.photos;
-
-        return (
-            <div id="feed">
-                <App.PhotoList photos={photos} />
-            </div>
-        );
-    }
-
-});
-
-
-
-
-
-/**
  * PhotoList (the list of photos in the feed).
  */
 

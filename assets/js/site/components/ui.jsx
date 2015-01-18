@@ -75,7 +75,7 @@ App.UI = React.createClass({
 
     feed: function() {
         return (
-            <App.Feed photos={this.state.photos} />
+            <App.PhotoList photos={this.state.photos} />
         );
     },
 

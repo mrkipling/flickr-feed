@@ -83,11 +83,23 @@ App.PhotoListItem = React.createClass({
             'background-image': 'url(' + photo.media.m + ');'
         };
 
+        // take the author name from the JSON and format it nicely, removing the
+        // nobody@flickr.com stuff and brackets (but only if they exist,
+        // otherwise just use what we have
+
+        var author_name = photo.author;
+        if (author_name.indexOf('nobody@flickr.com (') !== -1) {
+            author_name = author_name.replace('nobody@flickr.com (', '').slice(0, -1);
+        }
+
         return (
             <li>
                 <div className="thumb" style={thumb_style} />
                 <div className="inner clearfix">
                     <h2>{photo.title}</h2>
+                    <div className="details">
+                        <a className="author" href={'https://www.flickr.com/people/' + photo.author_id + '/'} target="_blank">{author_name}</a>
+                    </div>
                 </div>
             </li>
         );

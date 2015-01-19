@@ -16,4 +16,4 @@ The LESS can be found in ```./assets/css/site```. The main file that imports eve
 
 ## License
 
-This is released under the MIT License. See the LICENSE file for more information.
+This is released under the MIT License. See the [LICENSE](https://github.com/mrkipling/flickr-feed/blob/master/LICENSE) file for more information.

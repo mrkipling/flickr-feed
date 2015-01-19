@@ -10,7 +10,7 @@ App.Search = React.createClass({
     render: function() {
         return (
             <div id="search">
-                <input type="text" placeholder="Search tags..." ref="searchInput" onKeyUp={this.handleKeyPress} />
+                <input type="text" placeholder="Search tags..." ref="searchInput" onChange={this.handleKeyPress} />
             </div>
         );
     }

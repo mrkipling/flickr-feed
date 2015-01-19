@@ -18,12 +18,14 @@ App.PhotoList = React.createClass({
         var search_term = this.props.search_term;
         var photos = this.props.photos;
 
+        // if we have a search term, grep the photo list and filter by it
         if (search_term) {
             photos = $.grep(photos, function(photo) {
                 return photo.tags.indexOf(search_term) > -1;
             });
         }
 
+        // map the photos to PhotoListItem components
         var photo_list = photos.map(function(photo, i) {
             return (
                 <App.PhotoListItem key={'photo-li-' + i} photo={photo} />

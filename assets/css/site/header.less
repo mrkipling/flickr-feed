@@ -2,11 +2,20 @@
 
 #main-header {
     height: 65px;
+    min-width: 350px;
     position: relative;
 
     h1 {
         font-size: 2em;
         margin-top: 10px;
+        padding-right: 180px;
+
+        @media only screen and (max-width: @breakpoint-medium) {
+            font-size: 1.6em;
+            padding-right: 0;
+            position: relative;
+            top: -10px;
+        }
     }
 }
 
@@ -23,6 +32,12 @@
 
     input {
         padding: 5px;
-        width: 150px;
+        width: 175px;
+    }
+
+    @media only screen and (max-width: @breakpoint-medium) {
+        position: relative;
+        right: auto;
+        top: -7px;
     }
 }

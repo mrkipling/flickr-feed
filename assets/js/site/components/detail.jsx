@@ -5,10 +5,11 @@
 App.Detail = React.createClass({
 
     componentDidMount: function() {
-        var node = this.getDOMNode();
-
         // resize the feed node on initial page load and on window resize
-        App.Tools.resizeElement(node);
+        App.Tools.resizeElement(this.getDOMNode());
+
+        $('#search input').val('');
+        this.props.updateSearchTerm('');
     },
 
     componentWillUnmount: function() {
@@ -60,7 +61,7 @@ App.Detail = React.createClass({
 
         return (
             <div id="photo-detail">
-                <h2 id="photo-title"><a href={photo.link} target="_blank">{photo.title}</a></h2>
+                <h2 id="photo-title"><a href={photo.link} target="_blank">{photo.title || "Untitled"}</a></h2>
                 <div id="go-back" onClick={this.goBack}>Back</div>
 
                 <div className="info">
@@ -92,7 +93,7 @@ App.Tags = React.createClass({
     render: function() {
         var tags = this.props.tags ? this.props.tags.split(' ').map(function(tag) {
             return (
-                <a href={'https://www.flickr.com/search/?tags=' + tag} target="_blank">{tag}</a>
+                <a key={tag} href={'https://www.flickr.com/search/?tags=' + tag} target="_blank">{tag}</a>
             );
         }) : (
             <span>No tags provided</span>

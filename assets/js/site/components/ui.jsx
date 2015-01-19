@@ -35,8 +35,10 @@ App.UI = React.createClass({
             success: function(data) {
                 var photos;
 
+                // if photos were returned
                 if (typeof data.items !== 'undefined') {
                     photos = data.items.map(function(item) {
+                        // we don't have an ID in the JSON, so let's create one
                         var urlbits = item.link.split('/');
                         item.id = urlbits[urlbits.length - 2];
                         return item;
@@ -103,6 +105,8 @@ App.UI = React.createClass({
             );
         }
 
+        // find the photo in the state based on the ID that we constructed,
+        // using jQuery's grep function
         var photo = $.grep(this.state.photos, function(item) {
             return item.id === id;
         });
@@ -114,7 +118,7 @@ App.UI = React.createClass({
         }
 
         return (
-            <App.Detail photo={photo} />
+            <App.Detail photo={photo} updateSearchTerm={this.updateSearchTerm} />
         );
     }
 

@@ -3,19 +3,17 @@
 @photo-li-height: 90px;
 
 #photo-list {
+    background-color: #f3f3f3;
     border: 1px solid @border-color;
     min-width: 350px;
     overflow: auto;
 
     li {
-        border-top: 1px solid @border-color;
+        background-color: #fff;
+        border-bottom: 1px solid @border-color;
         height: @photo-li-height;
         padding-left: 120px;
         position: relative;
-
-        &:first-child {
-            border-top: none;
-        }
 
         @media only screen and (max-width: @breakpoint-small) {
             padding-left: 90px;

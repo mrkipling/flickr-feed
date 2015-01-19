@@ -8,6 +8,12 @@ It pulls in a feed of Flickr photos using their JSON API (using JSONP), populate
 
 Simply load ```./site/index.html``` in the browser of your choice - [as long as they're supported by Google Apps](https://support.google.com/a/answer/33864), which is most browsers - and everything should just work.
 
+## Viewing the code
+
+The main part of the app is the JS, which can be found in ```./assets/js/site```. Components are stored in the ```components``` directory. You might want to start with ```components/ui.jsx```.
+
+The LESS can be found in ```./assets/css/site```. The main file that imports everything is ```base.less```.
+
 ## License
 
 This is released under the MIT License. See the LICENSE file for more information.

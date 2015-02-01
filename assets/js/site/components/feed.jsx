@@ -26,9 +26,9 @@ App.PhotoList = React.createClass({
         }
 
         // map the photos to PhotoListItem components
-        var photo_list = photos.map(function(photo, i) {
+        var photo_list = photos.map(function(photo) {
             return (
-                <App.PhotoListItem key={'photo-li-' + i} photo={photo} />
+                <App.PhotoListItem key={'photo-li-' + photo.id} photo={photo} />
             );
         });
 
